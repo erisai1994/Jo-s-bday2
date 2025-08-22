@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
+
+html, body, #root, .container {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #6a1b9a, #120338);
+  position: relative;
+  font-family: 'Mystery Quest', cursive, system-ui, sans-serif;
+}
+
+/* Cercles magiques */
+.magic-circle {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #f48fb1);
+  transform: translate(-50%, -50%);
+}
+
+.slow-rotate {
+  animation: rotate 40s linear infinite;
+  opacity: 0.6;
+}
+
+.fast-rotate {
+  animation: rotateReverse 20s linear infinite;
+  opacity: 0.8;
+}
+
+/* Texte magique */
+.magic-text {
+  position: relative;
+  font-size: 6vmin;
+  font-weight: 700;
+  text-align: center;
+  white-space: pre-line;
+  color: #ffb6c1;
+  text-shadow:
+    0 0 8px #ff4da6,
+    0 0 12px #ff4da6,
+    0 0 20px #ff4da6;
+  z-index: 10;
+  user-select: none;
+  padding: 0 20px;
+  max-width: 90vw;
+}
+
+/* Animations */
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}

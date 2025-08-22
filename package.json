@@ -1,0 +1,43 @@
+{
+  "name": "sakura-birthday",
+  "version": "1.0.0",
+  "description": "Mini app anniversaire Sakura",
+  "author": "Axel",
+  "type": "module",
+  "main": "electron.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron .",
+    "start-win-prod": "set NODE_ENV=production&& electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.sakura.birthday",
+    "productName": "SakuraBirthday",
+    "files": [
+      "dist/**/*",
+      "electron.js"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "buildResources": "build"
+    }
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "electron": "^32.0.0",
+    "electron-builder": "^22.14.13",
+    "vite": "^5.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "framer-motion": "^10.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
+
